@@ -1,5 +1,4 @@
-%%
-% @author Shushan Chen
+function [classifier, min_err, final_pred] = trainWeakClassifier(train_set, weights, labels)
 % Train the weak classifier based on the training set and provided weights
 % @Input:
 %   train_set:  training data set
@@ -13,8 +12,7 @@
 %               dim3 represents the label if the sample is on the left towards the decision boundary
 %               dim4 represents the weight of classifier in final ensemble classifier
 %    err:       prediction error for this decision boundary
-%%
-function [classifier, min_err, final_pred] = trainWeakClassifier(train_set, weights, labels)
+
     classifier = zeros(4 ,1);
     min_err = sum(weights);
     dims = size(train_set, 2);

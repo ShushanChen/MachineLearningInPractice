@@ -1,10 +1,9 @@
-%%
+function [Y, num_images] = readImages(ImagePath, isMeanNorm, isVarNorm)
 % Read in images 
-% @ ImagePath: Text file incluing path of all images
-% @ isMeanNorm: Indicate if requires to do mean normalization
-% @ isVarNorm: Indicate if requires to do variance normalization
-%%
-function [Y] = readImages(ImagePath, isMeanNorm, isVarNorm)
+% ImagePath: Text file incluing path of all images
+% isMeanNorm: Indicate if requires to do mean normalization
+% isVarNorm: Indicate if requires to do variance normalization
+
     filenames = textread('./lfw_images.txt', '%s');
     num_images = length(filenames);
 

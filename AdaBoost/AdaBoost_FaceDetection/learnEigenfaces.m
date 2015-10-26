@@ -1,4 +1,6 @@
 function [eigenfaces] = learnEigenfaces(images, K)
+% Learn Eigenfaces form input images
+% Return the top K eigenfaces
 
     corrmatrix = images * images';
     
