@@ -8,10 +8,10 @@ function [eigenfaces] = learnEigenfaces(images, K)
     
     eigenfaces = zeros(size(eigvecs, 1), K);
 
-    img_num = size(images, 2);
+    eig_num = size(eigvecs, 2);
 
-    for i = 0 : k-1
-        eigenfaces(:, i + 1) = eigvecs(:, img_num - i);
+    for i = 0 : K-1
+        eigenfaces(:, i + 1) = eigvecs(:, eig_num - i);
     end
 
 end

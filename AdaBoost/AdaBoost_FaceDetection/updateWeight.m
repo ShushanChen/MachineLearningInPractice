@@ -1,4 +1,4 @@
-function [new_weights] updataWeight(weights, alpha, pred, labels)
+function [new_weights] = updateWeight(weights, alpha, pred, labels)
 % Update the weights of sample points
 % @Input:
 %   weights: current weights of sample points

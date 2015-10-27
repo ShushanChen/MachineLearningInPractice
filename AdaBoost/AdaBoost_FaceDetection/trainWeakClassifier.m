@@ -6,7 +6,7 @@ function [classifier, min_err, final_pred] = trainWeakClassifier(train_set, weig
 %   labels:     the correct label for each object
 % 
 % @output:
-%   classifier: 3*1 vector, 
+%   classifier: 4*1 vector, 
 %               dim1 represents the selected dimension,
 %               dim2 represents the decision boundary 
 %               dim3 represents the label if the sample is on the left towards the decision boundary

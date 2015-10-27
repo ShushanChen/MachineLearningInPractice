@@ -1,5 +1,5 @@
 function [W] = extractEigenWeight(eigfaces, images)
 % Extract the weights for image based on eigenfaces matrix
     
-    W = eigfaces\img;
+    W = eigfaces\images;
 end

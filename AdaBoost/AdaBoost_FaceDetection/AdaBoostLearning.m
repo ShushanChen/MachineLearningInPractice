@@ -3,6 +3,7 @@ function [classifier_set] = AdaBoostLearning(train_set, labels, iter_num, error_
 % The training process will stop if it meets the max iteration num or
 % the training error is less than the error threshold.
 
+    train_set = train_set';
     train_num = size(train_set, 1);
     assert(train_num == length(labels));
 
@@ -10,6 +11,8 @@ function [classifier_set] = AdaBoostLearning(train_set, labels, iter_num, error_
     
     classifier_set = zeros(iter_num, 4);
 
+    disp('Begin training...');
+    
     for i = 1:iter_num
         [classifier, err, pred] = trainWeakClassifier(train_set, weights, labels);
         alpha = 0.5*(log((1-err)/err));
@@ -20,7 +23,10 @@ function [classifier_set] = AdaBoostLearning(train_set, labels, iter_num, error_
             break;
         end
 
-        weights = updataWeights(weights, alpha, pred, labels);
+        weights = updateWeight(weights, alpha, pred, labels);
     end
 
+    disp('Finish training!');
+    msg = sprintf('The training process uses %d iterations', i);
+    disp(msg);
 end
