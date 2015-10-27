@@ -1,5 +1,8 @@
 function [eigwei_set, labels] = ConstructFeatureSet(eigenfaces, face_set, nonface_set)
-    
+% Construct the eigen weight feature for each image
+% The face image data and nonface image data will combine together
+% Corresponding labels are also made.
+
     face_eigwei = extractEigenWeight(eigenfaces, face_set);
     nonface_eigwei = extractEigenWeight(eigenfaces, nonface_set);
 
