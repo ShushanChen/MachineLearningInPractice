@@ -1,4 +1,14 @@
+%%
+% @Author: Shushan Chen
+% @Time: Oct.28 2015
+% There is not too much difference between this Adaboost face dector and
+% previous one. This version only includes one more feature, the normalized
+% total error between original image and reconstructed image.
+%%
 clc; clear; close all;
+
+% Number of eigenfaces you want to extract from the image
+K = 150;
 
 train_set_face_path = '../data/BoostingData/BoostData_train_face.txt';
 train_set_nonface_path = '../data/BoostingData/BoostData_train_nonface.txt';
@@ -18,7 +28,7 @@ assert(N1 == N2 && M1 == M2);
 
 assert(N1 == N2 && M1 == M2);
 
-K = 200;
+
 eigenfaces = learnEigenfaces(train_face, K);
 
 [train_set, train_labels] = ConstructFeatureSet(eigenfaces, train_face, train_nonface);
