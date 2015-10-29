@@ -8,7 +8,7 @@
 clc; clear; close all;
 
 % Number of eigenfaces you want to extract from the image
-K = 150;
+K = 200;
 
 train_set_face_path = '../data/BoostingData/BoostData_train_face.txt';
 train_set_nonface_path = '../data/BoostingData/BoostData_train_nonface.txt';
